@@ -8,35 +8,30 @@ import {
   FlatList,
 } from "react-native"
 
-export default function InputItem() {
-  const [item, setItem] = useState("")
-  const [list, setList] = useState([])
+export default function InputItem({ addTask }: any) {
+  const [task, setTask] = useState("")
 
-  // const addItem = () => {
-  //   setList()
-  // }
+  const handleAdd = () => {
+    addTask(task)
+    setTask("")
+  }
 
   return (
     <View>
       <View>
-        <Text style={styles.title}>What do you want to do?</Text>
         <TextInput
-          value={item}
-          onChangeText={setItem}
+          value={task}
+          onChangeText={setTask}
           style={styles.input}
           placeholder='Put an item'
         />
-        {/* <Button title='Add' onPress={() => addItem()} /> */}
+        <Button title='Add' onPress={handleAdd} />
       </View>
-      {/* <FlatList data={a}/> */}
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  title: {
-    color: "white",
-  },
   input: {
     color: "black",
     height: 40,
