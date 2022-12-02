@@ -18,15 +18,13 @@ export default function InputItem({ addTask }: any) {
 
   return (
     <View>
-      <View>
-        <TextInput
-          value={task}
-          onChangeText={setTask}
-          style={styles.input}
-          placeholder='Put an item'
-        />
-        <Button title='Add' onPress={handleAdd} />
-      </View>
+      <TextInput
+        value={task}
+        onChangeText={setTask}
+        style={styles.input}
+        placeholder='Put an item'
+      />
+      <Button title='Add' onPress={handleAdd} />
     </View>
   )
 }

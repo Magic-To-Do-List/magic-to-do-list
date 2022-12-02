@@ -20,13 +20,11 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.textContainer}>
         <Text style={styles.title}>What do you want to do?</Text>
-        {tasks.map((task) => {
-          return (
-            <View>
-              <TaskItem task={task} />
-            </View>
-          )
-        })}
+        <View style={styles.list}>
+          {tasks.map((task) => {
+            return <TaskItem task={task} />
+          })}
+        </View>
         <InputItem addTask={addTask} />
       </Text>
       <StatusBar style='auto' />
@@ -41,11 +39,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-start",
     color: "white",
+    flexDirection: "column",
   },
   textContainer: {
     color: "white",
   },
   title: {
     color: "white",
+  },
+  list: {
+    display: "flex",
+    flexDirection: "column",
   },
 })
