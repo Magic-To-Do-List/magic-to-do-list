@@ -1,12 +1,6 @@
 import { useState } from "react"
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Button,
-  FlatList,
-} from "react-native"
+import { StyleSheet, Text, View, TextInput, FlatList } from "react-native"
+import { Button } from "@react-native-material/core"
 
 export default function InputItem({ addTask }: any) {
   const [task, setTask] = useState("")

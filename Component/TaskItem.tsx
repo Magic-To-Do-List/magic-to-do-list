@@ -1,5 +1,6 @@
 import React from "react"
-import { StyleSheet, Text, View, TouchableOpacity, Button } from "react-native"
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native"
+import { Button } from "@react-native-material/core"
 
 function TaskItem(props: any) {
   return (
@@ -7,16 +8,19 @@ function TaskItem(props: any) {
       <View style={styles.number}>
         <Text style={styles.text}>{props.index + 1}</Text>
       </View>
-      <View>
+      <View style={styles.listText}>
         <Text style={styles.text}>{props.task}</Text>
       </View>
-      <Button title='Remove' />
+      <View>
+        <Button title='Remove' />
+      </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   listContainer: {
+    // flex: 6,
     flexDirection: "row",
   },
   text: {
@@ -27,6 +31,10 @@ const styles = StyleSheet.create({
     width: "20%",
     height: "100%",
     backgroundColor: "blue",
+    // flex: 1,
+  },
+  listText: {
+    flex: 4,
   },
 })
 

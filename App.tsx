@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     color: "white",
     flexDirection: "column",
-    padding: 30,
+    paddingTop: 100,
   },
   title: {
     color: "white",
