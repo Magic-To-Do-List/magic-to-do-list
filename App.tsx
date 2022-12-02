@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar"
-import { StyleSheet, Text, View } from "react-native"
+import { SafeAreaView, StyleSheet, Text, View } from "react-native"
 import InputItem from "./Component/InputItem"
 import React, { useState, Dispatch } from "react"
 import TaskItem from "./Component/TaskItem"
@@ -17,38 +17,37 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.textContainer}>
+    <SafeAreaView style={styles.container}>
+      <View>
         <Text style={styles.title}>What do you want to do?</Text>
-        <View style={styles.list}>
-          {tasks.map((task) => {
-            return <TaskItem task={task} />
-          })}
-        </View>
         <InputItem addTask={addTask} />
-      </Text>
+      </View>
+      <View>
+        {/* <View style={styles.list}> */}
+        {tasks.map((task, index) => {
+          return <TaskItem task={task} index={index} />
+        })}
+      </View>
       <StatusBar style='auto' />
-    </View>
+    </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 6,
     backgroundColor: "black",
     alignItems: "center",
     justifyContent: "flex-start",
     color: "white",
     flexDirection: "column",
-  },
-  textContainer: {
-    color: "white",
+    padding: 30,
   },
   title: {
     color: "white",
   },
-  list: {
-    display: "flex",
-    flexDirection: "column",
-  },
+  // list: {
+  //   display: "flex",
+  //   flexDirection: "column",
+  // },
 })
